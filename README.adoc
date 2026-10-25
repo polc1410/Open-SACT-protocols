@@ -1,5 +1,5 @@
 = Metanorma XSD documentation tools
-
+= Open SACT Protocols 
 == Purpose
 
 This repository demonstrates how to generate documentation
