@@ -1,6 +1,6 @@
 = Open SACT Protocols
-Calum Polwart
-
+:mn-document-class: iso
+:docfile: index.adoc
 == Introduction
 
 This site is a demonstration site to show how an *Open Standard* for Systemic Anti-Cancer Therapy(SACT) Protocols might work to allow transfer of protocols between systems.
