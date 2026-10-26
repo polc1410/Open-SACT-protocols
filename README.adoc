@@ -1,3 +1,5 @@
+[![ubuntu](https://github.com/polc1410/Open-SACT-protocols/actions/workflows/ubuntu.yml/badge.svg)](https://github.com/polc1410/Open-SACT-protocols/actions/workflows/ubuntu.yml)
+
 = Metanorma XSD documentation tools
 = Open SACT Protocols 
 == Purpose
