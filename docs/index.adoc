@@ -1,0 +1,13 @@
+= Open SACT Protocols
+Calum Polwart
+
+== Introduction
+
+This site is a demonstration site to show how an *Open Standard* for Systemic Anti-Cancer Therapy(SACT) Protocols might work to allow transfer of protocols between systems.
+
+== Scope
+
+Example xsld standards:
+View a very detailed standard for exachange of units information borrowed from elsewhere:unitsml-v1.0[Here]!
+and a
+Very simple standard for exachange of information about a drug library:example_drug[Here]!
