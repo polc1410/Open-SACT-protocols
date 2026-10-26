@@ -1,0 +1,4 @@
+metanorma:
+  source:
+    files:
+      - index.adoc        # paths are relative to sources/; list your real files
