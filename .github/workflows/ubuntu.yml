@@ -23,6 +23,21 @@ jobs:
         with:
           ruby-version: '3.2'
           bundler-cache: true
+      - name: Debug
+        run: |
+          pwd
+          ls -la
+          echo "--- schemas ---"
+          ls -la schemas/ || true
+          echo "--- tracked by git ---"
+          git ls-files schemas
+          echo "--- make dry run ---"
+          make -n docs/example_drug/index.html || true
+          echo "--- make debug ---"
+          make --debug=b docs 2>&1 | head -40 || true
+
+      - name: XSD documentation generation
+        run: make
 
       - name: XSD documentation generation
         run: make
