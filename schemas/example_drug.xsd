@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema
+  xmlns:xs="http://www.w3.org/2001/XMLSchema"
+  xmlns="http://example.org/schema/drug/1.0"
+  targetNamespace="http://example.org/schema/drug/1.0"
+  elementFormDefault="qualified"
+  version="1.0">
+
+  <xs:annotation>
+    <xs:documentation>
+      Minimal description of a drug: name, dm+d VTM code,
+      units of measure and acceptable routes (SNOMED CT coded).
+    </xs:documentation>
+  </xs:annotation>
+
+  <!-- SNOMED CT identifier: 6 to 18 digits, no leading zero -->
+  <xs:simpleType name="SctId">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="[1-9][0-9]{5,17}"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <!-- A SNOMED CT concept: code plus human-readable term -->
+  <xs:complexType name="CodedConcept">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute name="code" type="SctId" use="required"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:element name="drug">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="name" type="xs:string"/>
+        <xs:element name="vtm" type="CodedConcept">
+          <xs:annotation>
+            <xs:documentation>dm+d Virtual Therapeutic Moiety. The text is the VTM name.</xs:documentation>
+          </xs:annotation>
+        </xs:element>
+        <xs:element name="unitsOfMeasure">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="unit" type="CodedConcept" maxOccurs="unbounded"/>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="routes">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="route" type="CodedConcept" maxOccurs="unbounded"/>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
