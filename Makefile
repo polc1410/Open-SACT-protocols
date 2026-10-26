@@ -34,14 +34,4 @@ sources:
 	mkdir -p docs
 	cp -r _site/. docs/
 
-.archive/Xerces-J-bin.2.12.2.tar.gz:
-	mkdir -p $(dir $@)
-	curl -sSL -o $@ $(XERCESURL)
-
-.archive/xsdvi-1.0.jar:
-	mkdir -p $(dir $@)
-	curl -sSL -o $@ $(XSDVIURL)
-
-.archive/xs3p.tar.gz:
-	mkdir -p $(dir $@)
-	curl -sSL -o $@ $(XS3PURL)
+.archiv
