@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<drug>
+  <name>Aspirin</name>
+  <unitsOfMeasure>
+    <unit>milligram</unit>
+  </unitsOfMeasure>
+  <routes>
+    <route>Oral route</route>
+    <route>Rectal route</route>
+  </routes>
+</drug>
+<drug>
+  <name>Digoxin</name>
+  <unitsOfMeasure>
+    <unit>microgram</unit>
+    <unit>millilitre</unit>
+  </unitsOfMeasure>
+  <routes>
+    <route>Oral</route>
+    <route>Intravenous</route>
+  </routes>
+</drug>
