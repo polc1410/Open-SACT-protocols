@@ -1,15 +1,32 @@
-<!-- _index.liquid -->
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>{{ title }}</title>
-    <style>{{ css }}</style>
-  </head>
-  <body>
-    <h1>{{ title }}</h1>
-    <div class="documents">
-      {% render 'document' for documents as document %}
-    </div>
-    <footer>Generated: {{ date }}</footer>
-  </body>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Open SACT Protocols</title>
+  <link rel="stylesheet" href="assets/site.css">
+</head>
+<body>
+  <nav class="site-nav"><a href="index.html">Open SACT Protocols</a></nav>
+  <h1>Open SACT Protocols</h1>
+
+  <p>Write your introduction here: what the project is, who it is for,
+     and how the standards fit together.</p>
+
+  <h2>Schemas</h2>
+  <div class="card">
+    <a href="example_drug/index.html">Example drug schema</a>
+    <p>Minimal description of a drug: name, dm+d VTM code, units, routes.</p>
+  </div>
+  <div class="card">
+    <a href="unitsml-v1.0/index.html">UnitsML v1.0</a>
+    <p>Description of the schema.</p>
+  </div>
+
+  <h2>Documents</h2>
+  {% for document in documents %}
+  <div class="card">
+    <a href="{{ document.url }}">{{ document.title }}</a>
+  </div>
+  {% endfor %}
+</body>
 </html>
