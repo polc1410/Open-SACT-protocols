@@ -2,6 +2,12 @@
 
 # Open SACT Protocols 
 
+Open SACT Protocols is a demonstration project for an open specification for describing systemic anti-cancer therapy (SACT) protocols in a structured, machine-readable way.  The aim being that protocols can be exchanged between prescribing systems, a national protocol platform and rendered in a readable way to end users.
+
+The project will attempt to create a first draft of such an open standard, assisted by LLMs as part of [BOPA](https://bopa.org.uk)'s 2nd Hackathon. This site has been created to provide a holding point to use during that hackathon.
+
+Documentation is automatically built and the pages are rendered at:  [https://polc1410.github.io/Open-SACT-protocols/](https://polc1410.github.io/Open-SACT-protocols/).  
+
 Documentation is entered into the XSD file using the
 `<xsd:annotation>` and `<xsd:documentation>` tags.
 
