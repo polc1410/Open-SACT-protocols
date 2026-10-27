@@ -1,4 +1,8 @@
 metanorma:
   source:
     files:
-      - index.adoc
+      - protocols.adoc
+
+collection:
+  organization: "Open SACT"
+  name: "Open SACT Protocols"
