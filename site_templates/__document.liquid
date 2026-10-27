@@ -1,0 +1,9 @@
+<!-- _document.liquid -->
+<div class="document">
+  <h2><a href="{{ document.html }}">{{ document.docid.id }}</a></h2>
+  <p class="title">{{ document.title }}</p>
+  <p class="status">Status: {{ document.docstatus.stage }}</p>
+  {% if document.pdf %}
+    <a href="{{ document.pdf }}">PDF</a>
+  {% endif %}
+</div>
