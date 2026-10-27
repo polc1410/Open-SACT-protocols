@@ -38,27 +38,29 @@ These tags can be combined to create some structure to the data for instance, a 
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
-<drug>
-  <name>Aspirin</name>
-  <unitsOfMeasure>
-    <unit>milligram</unit>
-  </unitsOfMeasure>
-  <routes>
-    <route>Oral route</route>
-    <route>Rectal route</route>
-  </routes>
-</drug>
-<drug>
-  <name>Digoxin</name>
-  <unitsOfMeasure>
-    <unit>microgram</unit>
-    <unit>millilitre</unit>
-  </unitsOfMeasure>
-  <routes>
-    <route>Oral</route>
-    <route>Intravenous</route>
-  </routes>
-</drug>
+<drugs>
+  <drug>
+    <name>Aspirin</name>
+    <unitsOfMeasure>
+      <unit>milligram</unit>
+    </unitsOfMeasure>
+    <routes>
+      <route>Oral route</route>
+      <route>Rectal route</route>
+    </routes>
+  </drug>
+  <drug>
+    <name>Digoxin</name>
+    <unitsOfMeasure>
+      <unit>microgram</unit>
+      <unit>millilitre</unit>
+    </unitsOfMeasure>
+    <routes>
+      <route>Oral</route>
+      <route>Intravenous</route>
+    </routes>
+  </drug>
+</drugs>
 ```
 As you will see that is already quite hard to read and this covers a tiny amount of information compared to a SACT protocol.   We can apply something know as a XML Stylesheet to an XML file to make the content much more readable. Take a look at how that would appear [here](example_drugs.xml)  
 
