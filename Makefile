@@ -78,6 +78,8 @@ docs/%/index.html: schemas/%.xsd $(XSDVIPATH) $(XERCESPATH) $(XS3PPATH)
 	xsltproc --nonet \
 		--param title "'Schema documentation $(notdir $*)'" \
 		--output $@ $(XS3PPATH) $<
+	sed -i 's|</head>|<link rel="stylesheet" href="../assets/site.css"></head>|' $@
+	sed -i 's|<body>|<body><nav class="site-nav"><a href="../index.html">Open SACT Protocols</a></nav>|' $@
 
 clean:
 	rm -rf docs xsl xsdvi _site
