@@ -28,15 +28,15 @@ There are a couple of different file formats that could be used for information 
 
 A basic XML file is some information contained in a tag like this:
 
-```xml
+~~~xml
 <information_label>
   The information
 </information_label>
-```
+~~~
 
 These tags can be combined to create some structure to the data for instance, a XML file describing drugs might contain the drug, its units of measure, the route it can be administered through.  Here is an example for 2 drugs - aspirin and digoxin following that approach:
 
-```xml
+~~~xml
 <?xml version="1.0" encoding="UTF-8"?>
 <drugs>
   <drug>
@@ -61,7 +61,8 @@ These tags can be combined to create some structure to the data for instance, a 
     </routes>
   </drug>
 </drugs>
-```
-As you will see that is already quite hard to read and this covers a tiny amount of information compared to a SACT protocol.   We can apply something know as a XML Stylesheet to an XML file to make the content much more readable. Take a look at how that would appear [here](example_drugs.xml)  
+~~~
+
+As you will see that is already quite hard to read and this covers a tiny amount of information compared to a SACT protocol.   We can apply something know as a XML Stylesheet to an XML file to make the content much more readable. Take a look at how that would appear [here](assets/example_drugs.xml)  
 
 In addition, there are potential opportunities for the same information to be recorded in different ways: Oral or Oral route? Should we dose digoxin in millilitres? Therefore any structured data sharing format needs a set of rules defining mandatory information, coding of data and data formats.  In XML this is known as a schema.  This project aims to define a schema for the protocol.  As an example we have created a [schema](example_drug) for the above XML describing drugs.
