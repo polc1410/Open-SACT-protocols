@@ -22,7 +22,7 @@ XS3PPATH := xsl/xs3p.xsl
 PREFIXES_PATH := https://github.com/unitsml/unitsdb/raw/main/prefixes.yaml
 UNITS_PATH := https://github.com/unitsml/unitsdb/raw/main/units.yaml
 
-all: docs sources
+all: docs assets sources
 
 docs: $(DOCS)
 
@@ -38,6 +38,10 @@ sources:
 	test -f _site/index.html
 	mkdir -p docs
 	cp -r _site/. docs/
+
+assets:
+	mkdir -p docs/assets
+	cp site_assets/* docs/assets/
 
 .archive/Xerces-J-bin.2.12.2.tar.gz:
 	mkdir -p $(dir $@)
@@ -81,4 +85,5 @@ clean:
 distclean: clean
 	rm -rf .archive
 
-.PHONY: all clean setup distclean sources docs
+.PHONY: all clean setup distclean sources docs assets
+
