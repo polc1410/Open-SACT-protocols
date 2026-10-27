@@ -29,9 +29,9 @@ docs: $(DOCS)
 setup: $(XSDVIPATH) $(XERCESPATH) $(XS3PPATH)
 
 # Build the Metanorma documents in sources/ and merge them into docs/
-sources:
+sources: intro
 	bundle exec metanorma site generate sources \
-		-t site_templates \
+		-t _templates \
 		-o _site \
 		-x html \
 		--agree-to-terms
@@ -42,6 +42,12 @@ sources:
 assets:
 	mkdir -p docs/assets
 	cp site_assets/* docs/assets/
+
+intro:
+	mkdir -p _templates
+	cp site_templates/* _templates/
+	bundle exec kramdown content/intro.md > _intro.html
+	sed -e '/<!-- INTRO -->/{r _intro.html' -e 'd}' site_templates/_index.liquid > _templates/_index.liquid
 
 .archive/Xerces-J-bin.2.12.2.tar.gz:
 	mkdir -p $(dir $@)
@@ -82,10 +88,8 @@ docs/%/index.html: schemas/%.xsd $(XSDVIPATH) $(XERCESPATH) $(XS3PPATH)
 	sed -i 's|<body>|<body><nav class="site-nav"><a href="../index.html">Open SACT Protocols</a></nav>|' $@
 
 clean:
-	rm -rf docs xsl xsdvi _site
+	rm -rf docs xsl xsdvi _site _templates _intro.html
 
-distclean: clean
-	rm -rf .archive
-
+.PHONY: all clean setup distclean sources docs assets intro
 .PHONY: all clean setup distclean sources docs assets
 
