@@ -1,0 +1,15 @@
+<!-- _index.liquid -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>{{ title }}</title>
+    <style>{{ css }}</style>
+  </head>
+  <body>
+    <h1>{{ title }}</h1>
+    <div class="documents">
+      {% render 'document' for documents as document %}
+    </div>
+    <footer>Generated: {{ date }}</footer>
+  </body>
+</html>

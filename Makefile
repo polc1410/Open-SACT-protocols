@@ -30,8 +30,12 @@ setup: $(XSDVIPATH) $(XERCESPATH) $(XS3PPATH)
 
 # Build the Metanorma documents in sources/ and merge them into docs/
 sources:
-	bundle exec metanorma site generate sources -o _site --agree-to-terms
-	test -d _site
+	bundle exec metanorma site generate sources \
+		-t site_templates \
+		-o _site \
+		-x html \
+		--agree-to-terms
+	test -f _site/index.html
 	mkdir -p docs
 	cp -r _site/. docs/
 
