@@ -21,11 +21,9 @@
     <xs:restriction base="xs:string">
       <xs:pattern value="[1-9][0-9]{5,17}"/>
     </xs:restriction>
-      <xs:annotation>
     <xs:documentation>
       Where a data item is a numerical identifier, then we can define details of that such as in this case where a SNOMED CT code might be used. While the scheme does not check that the correct code has been used, it can provide some validation that a potentially valid code has been used, here it will allow a number with no trailing zero (shown by [1-9]), followed by further digits which obviously can have a zero [0-9] and the SNOMED code can be 6 to 18 characters long, so the remaining digits are repeated between {5 and 17} times.
     </xs:documentation>
-  </xs:annotation>
   </xs:simpleType>
 
   <!-- A SNOMED CT concept: code plus human-readable term -->
@@ -34,11 +32,9 @@
       <xs:extension base="xs:string">
         <xs:attribute name="code" type="SctId" use="required"/>
       </xs:extension>
-        <xs:annotation>
     <xs:documentation>
 Sometimes it will be easier for a data element to contain both a SNOMED CT code and its accompaying text description. In this case we can apply the same restrictions for a valid code described above, but set them as an attribute as part of a string coded concept.  
     </xs:documentation>
-  </xs:annotation>
     </xs:simpleContent>
   </xs:complexType>
 
@@ -47,17 +43,13 @@ Sometimes it will be easier for a data element to contain both a SNOMED CT code 
       <xs:sequence>
         <xs:element name="name" type="xs:string"/>
         <xs:element name="vtm" type="CodedConcept">
-          <xs:annotation>
             <xs:documentation>dm+d Virtual Therapeutic Moiety. The text is the VTM name (e.g. Aspirin), with an accompanying coded vtm value. In this case no restrictions on code lengths has been set</xs:documentation>
-          </xs:annotation>
         </xs:element>
         <xs:element name="unitsOfMeasure">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="unit" type="CodedConcept" maxOccurs="unbounded"/>
-               <xs:annotation>
             <xs:documentation>Units of measure can be coded from SNOMED CT.  In this example, multiple units of measure are allowedm (maxOccurs). In a chemotherapy protocol, it is likely that only one unit of measure will be permitted per drug.</xs:documentation>
-          </xs:annotation>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
@@ -65,9 +57,7 @@ Sometimes it will be easier for a data element to contain both a SNOMED CT code 
           <xs:complexType>
             <xs:sequence>
               <xs:element name="route" type="CodedConcept" maxOccurs="unbounded"/>
-               <xs:annotation>
             <xs:documentation>Routes of administration can be coded from SNOMED CT. Multiple routes of administration for a drug would be permitted. </xs:documentation>
-          </xs:annotation>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
