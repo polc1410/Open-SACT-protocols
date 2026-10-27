@@ -1,0 +1,13 @@
+:root { --accent: #1a5f9e; --bg: #fff; --fg: #1d1d1f; --muted: #f4f6f8; }
+@media (prefers-color-scheme: dark) {
+  :root { --accent: #6db3f2; --bg: #14171a; --fg: #e8e8ea; --muted: #1f2428; }
+}
+body { font-family: system-ui, sans-serif; color: var(--fg); background: var(--bg);
+       max-width: 62rem; margin: 0 auto; padding: 1rem 1.5rem; line-height: 1.55; }
+a { color: var(--accent); }
+h1, h2, h3 { line-height: 1.25; }
+.site-nav { padding: .6rem 0; margin-bottom: 1rem; border-bottom: 2px solid var(--accent); }
+.site-nav a { font-weight: 600; text-decoration: none; }
+.card { background: var(--muted); border-radius: 8px; padding: .8rem 1.1rem; margin: .8rem 0; }
+table { border-collapse: collapse; }
+td, th { border: 1px solid var(--muted); padding: .3rem .5rem; }
