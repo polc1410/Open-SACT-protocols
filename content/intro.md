@@ -2,9 +2,6 @@ Open SACT Protocols is a demonstration project for an open specification for des
 
 The project will attempt to create a first draft of such an open standard, assisted by LLMs as part of [BOPA](https://bopa.org.uk)'s 2nd Hackathon. This site has been created to provide a holding point to use during that hackathon.
 
-Drugs are identified using **dm+d VTM** codes, and units and routes use
-**SNOMED CT** concepts.
-
 ## How to use this site
 
 - The **Schemas** section holds the XML Schema documentation, with diagrams.
